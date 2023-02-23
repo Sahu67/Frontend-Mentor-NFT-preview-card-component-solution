@@ -55,7 +55,7 @@ body {
     visibility: hidden;
     top: 50%;
     left: 50%;
-    background: url('images/icon-view.svg');
+    background: url(images/icon-view.svg) no-repeat;
     transform: translate(-50%, -50%);
 }
 .nft-img:hover::before, .nft-img:hover::after {
