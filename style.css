@@ -33,37 +33,39 @@ body {
     box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.37);
     background: var(--very-dark-blue-card-bg);
 }
-.wrapper > img.equilibrium-img {
+.wrapper .nft-img {
+    position: relative;
+    cursor: pointer;
+}
+.nft-img::before {
+    position: absolute;
+    content: '';
     width: 100%;
     height: 300px;
-    cursor: pointer;
-    object-fit: cover;
+    visibility: hidden;
+    background: hsl(178, 100%, 50%);
+    opacity: 0.5;
     border-radius: 10px;
 }
-.wrapper .view {
+.nft-img::after {
     position: absolute;
-    width: calc(100% - 40px);
-    height: 300px;
-    top: 20px;
-    left: 20px;
+    content: '';
+    width: 50px;
+    height: 50px;
     visibility: hidden;
-    user-select: none;
-    opacity: 0.5;
-    cursor: pointer;
-    border-radius: 8px;
-    background: var(--cyan);
-    transition: 0.3s ease;
-}
-.wrapper .view img {
-    position: absolute;
     top: 50%;
     left: 50%;
-    cursor: pointer;
+    background: url('/images/icon-view.svg');
     transform: translate(-50%, -50%);
 }
-img.equilibrium-img:hover ~ .view,
-.view:hover {
+.nft-img:hover::before, .nft-img:hover::after {
     visibility: visible;
+}
+.wrapper img.equilibrium-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 .wrapper hr {
     border: none;
